@@ -4,6 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 const Header: React.FC = () => {
   return (
     <View style={styles.header}>
+    
       <Text style={styles.title}>Cloud Explorer Academy</Text>
       <Text style={styles.subtitle}>Learn while Playing</Text>
     </View>

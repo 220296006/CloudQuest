@@ -1,5 +1,7 @@
 # Cloud Explorer: A React Native Cloud Learning Application
 
+![Alt](assets/CloudQuest.png)
+
 ## Overview
 
 Cloud Explorer is a mobile application built with React Native designed to provide an interactive and fun way to learn about cloud computing concepts. This application is built with a component-based architecture, mirroring Angular's modularity, making it easy to understand and extend.
@@ -35,29 +37,53 @@ This application is for:
 
 ## Getting Started
 
-1. **Prerequisites:**
-    - Node.js and npm (or yarn) installed.
-    - React Native development environment set up (refer to [React Native official documentation](https://reactnative.dev/docs/environment-setup)).
-    - Basic understanding of JavaScript (ES6+)
-    - Android SDK or XCode for simulators/emulators
-2. **Project Setup**
-    - Initialize a React Native project `npx react-native init CloudExplorer` or `yarn create react-native-app CloudExplorer`
-3. **Installation:**
+### Prerequisites
+
+Before starting make sure you have:
+
+- Node.js (>=16)
+- npm or yarn
+- React Native CLI
+- Android Studio or Xcode for mobile development
+
+### Installation
+
+1. **Create a new React Native project**
 
     ```bash
-    cd CloudExplorer
-    npm install
+     npx react-native init CloudQuest
     ```
 
-    Install react-native-paper
-
-    ```bash
-    npm install react-native-paper
-    ```
-
-4. **Run the app:**
+2. **Navigate to the project**
 
    ```bash
-    npx react-native run-android
-    or
-    npx react-native run-ios
+     cd CloudQuest
+    ```
+
+3. **Install dependencies:**
+
+    ```bash
+     npm install @react-navigation/native @react-navigation/stack @react-native-async-storage/async-storage react-native-safe-area-context react-native-screens react-native-paper styled-components @reduxjs/toolkit react-redux jest @testing-library/react-native nativewind
+
+    npm install -D tailwindcss
+    ```
+
+- Optional Backend Dependencies
+
+    ```bash
+     npm install firebase @react-native-firebase/app @react-native-firebase/auth @react-native-firebase/firestore
+    npm install aws-amplify aws-amplify-react-native
+    ```
+
+- **Configuration for tailwind**
+
+   If you have selected nativewind use these steps below
+
+  1. Add `nativewind/babel` to your `babel.config.js`:
+
+```javascript
+module.exports = {
+    presets: ['module:metro-react-native-babel-preset'],
+    plugins: ['nativewind/babel'],
+};
+```
