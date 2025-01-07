@@ -1,89 +1,79 @@
-# Cloud Explorer: A React Native Cloud Learning Application
+This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-![Alt](assets/CloudQuest.png)
+# Getting Started
 
-## Overview
+>**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
-Cloud Explorer is a mobile application built with React Native designed to provide an interactive and fun way to learn about cloud computing concepts. This application is built with a component-based architecture, mirroring Angular's modularity, making it easy to understand and extend.
+## Step 1: Start the Metro Server
 
-## Target Audience
+First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
 
-This application is for:
+To start Metro, run the following command from the _root_ of your React Native project:
 
-- Individuals new to cloud computing.
-- Students studying cloud technologies.
-- Developers looking to reinforce their understanding of cloud concepts.
-- Anyone curious about how the cloud works in a practical context.
+```bash
+# using npm
+npm start
 
-## Core Features
-
-- **Home/Landing Page:** An engaging starting point with introductory information and navigation options.
-- **Cloud Concept Modules:** Separate modules for topics such as:
-  - Cloud Service Models (IaaS, PaaS, SaaS)
-  - Cloud Deployment Models (Public, Private, Hybrid)
-  - Core Cloud Services (Compute, Storage, Database)
-  - Cloud Security
-- **Interactive Components:** Use of quizzes, diagrams, and examples to illustrate concepts.
-- **Cross-Platform Support:** Built using React Native, ensuring the application works seamlessly on both iOS and Android devices.
-
-## Technical Architecture
-
-- **React Native:** The core framework for building cross-platform mobile applications.
-- **Component-Based Architecture:** The application is broken down into reusable UI components.
-- **Navigation:** React Navigation or a similar library for handling app navigation.
-- **Styling:** Using React Native's built-in styling capabilities or styled-components/tailwind.
-- **State Management:** Basic React state management for simpler scenarios, using context API if necessary for more complex cases.
-- **UI Library:** We will utilize react-native-paper for UI elements
-
-## Getting Started
-
-### Prerequisites
-
-Before starting make sure you have:
-
-- Node.js (>=16)
-- npm or yarn
-- React Native CLI
-- Android Studio or Xcode for mobile development
-
-### Installation
-
-1. **Create a new React Native project**
-
-    ```bash
-     npx react-native init CloudQuest
-    ```
-
-2. **Navigate to the project**
-
-   ```bash
-     cd CloudQuest
-    ```
-
-3. **Install dependencies:**
-
-    ```bash
-     npm install @react-navigation/native @react-navigation/stack @react-native-async-storage/async-storage react-native-safe-area-context react-native-screens react-native-paper styled-components @reduxjs/toolkit react-redux jest @testing-library/react-native nativewind
-
-    npm install -D tailwindcss
-    ```
-
-- Optional Backend Dependencies
-
-    ```bash
-     npm install firebase @react-native-firebase/app @react-native-firebase/auth @react-native-firebase/firestore
-    npm install aws-amplify aws-amplify-react-native
-    ```
-
-- **Configuration for tailwind**
-
-   If you have selected nativewind use these steps below
-
-  1. Add `nativewind/babel` to your `babel.config.js`:
-
-```javascript
-module.exports = {
-    presets: ['module:metro-react-native-babel-preset'],
-    plugins: ['nativewind/babel'],
-};
+# OR using Yarn
+yarn start
 ```
+
+## Step 2: Start your Application
+
+Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+
+### For Android
+
+```bash
+# using npm
+npm run android
+
+# OR using Yarn
+yarn android
+```
+
+### For iOS
+
+```bash
+# using npm
+npm run ios
+
+# OR using Yarn
+yarn ios
+```
+
+If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+
+This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+
+## Step 3: Modifying your App
+
+Now that you have successfully run the app, let's modify it.
+
+1. Open `App.tsx` in your text editor of choice and edit some lines.
+2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+
+   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+
+## Congratulations! :tada:
+
+You've successfully run and modified your React Native App. :partying_face:
+
+### Now what?
+
+- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
+- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+
+# Troubleshooting
+
+If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+
+# Learn More
+
+To learn more about React Native, take a look at the following resources:
+
+- [React Native Website](https://reactnative.dev) - learn more about React Native.
+- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
+- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
+- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
+- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
