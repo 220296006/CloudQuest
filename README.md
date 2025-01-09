@@ -1,79 +1,119 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Cloud Explorer
 
-# Getting Started
+![Alt](assets/CloudExplorer.png)
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Introduction
 
-## Step 1: Start the Metro Server
+Cloud Explorer is a mobile application built using React Native designed to help users learn Google Cloud Platform (GCP) concepts through visually appealing informatics, engaging quizzes, and exams at the end of each certification journey, such as the Cloud Digital Leader Certification.
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## System Architecture
 
-To start Metro, run the following command from the _root_ of your React Native project:
+### Application Architecture
 
-```bash
-# using npm
-npm start
+- **Frontend**: React Native for building cross-platform mobile applications (iOS and Android).
+- **Backend**: Node.js with Express.js for handling API requests.
+- **State Management**: Redux for managing application state.
+- **Navigation**: React Navigation for handling navigation within the app.
+- **Authentication**: Firebase Authentication for user login and registration.
 
-# OR using Yarn
-yarn start
+### Cloud Architecture
+
+- **Compute**: Google Compute Engine for running backend services.
+- **Storage**: Google Cloud Storage for storing user data and application assets.
+- **Database**: Google Firestore for real-time database and data synchronization.
+- **Authentication**: Firebase Authentication for secure user authentication.
+- **CI/CD**: Google Cloud Build for continuous integration and deployment.
+- **Hosting**: Google Cloud Run for deploying and managing containerized applications.
+
+## Functional Requirements
+
+1. **User Authentication**: Users should be able to register, log in, and log out.
+2. **Dashboard**: Display an overview of the user's cloud resources and learning progress.
+3. **Learning Modules**: Provide interactive learning modules for various GCP concepts.
+4. **Quizzes**: Include quizzes to test users' understanding of the concepts.
+5. **Exams**: Offer exams at the end of each certification journey.
+6. **Progress Tracking**: Track and display users' progress through the learning modules.
+7. **Notifications**: Send notifications about quiz and exam results, and learning milestones.
+8. **Settings**: Allow users to configure app settings and preferences.
+
+## Non-Functional Requirements
+
+1. **Performance**: The app should load quickly and handle a large number of users efficiently.
+2. **Scalability**: The backend should be able to scale to handle increasing user load.
+3. **Security**: User data should be securely stored and transmitted.
+4. **Usability**: The app should have an intuitive and user-friendly interface.
+5. **Reliability**: The app should be highly available and handle failures gracefully.
+
+## CI/CD Pipeline
+
+1. **Version Control**: Use Git for version control and GitHub for repository hosting.
+2. **Continuous Integration**:
+   - **Trigger**: Set up a trigger in Google Cloud Build to start the pipeline on code push to the main branch.
+   - **Build**: Dockerize the React Native app and backend services.
+   - **Test**: Run unit tests and integration tests.
+3. **Continuous Deployment**:
+   - **Push to Container Registry**: Push the Docker images to Google Container Registry.
+   - **Deploy to Cloud Run**: Deploy the containerized application to Google Cloud Run.
+   - **Notifications**: Send notifications on build and deployment status via Google Chat or Slack.
+
+### Example `cloudbuild.yaml` for CI/CD Pipeline
+
+```yaml
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/frontend:$COMMIT_SHA', '.']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/frontend:$COMMIT_SHA']
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['run', 'deploy', 'cloud-explorer', '--image', 'gcr.io/$PROJECT_ID/frontend:$COMMIT_SHA', '--platform=managed', '--region=us-central1']
 ```
 
-## Step 2: Start your Application
+## Getting Started
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+### Prerequisites
 
-### For Android
+- Node.js and npm installed
+- React Native CLI installed
+- Google Cloud SDK installed and configured
+- Firebase project set up
 
-```bash
-# using npm
-npm run android
+### Installation
 
-# OR using Yarn
-yarn android
-```
+1. Clone the repository:
 
-### For iOS
+   ```bash
+   git clone https://github.com/yourusername/cloud-explorer.git
+   cd cloud-explorer
+   ```
 
-```bash
-# using npm
-npm run ios
+2. Install dependencies:
 
-# OR using Yarn
-yarn ios
-```
+   ```bash
+   npm install
+   ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+3. Set up Firebase:
+   - Create a Firebase project and enable Authentication and Firestore.
+   - Download the `google-services.json` file and place it in the `android/app` directory.
+   - Download the `GoogleService-Info.plist` file and place it in the `ios` directory.
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+4. Start the development server:
 
-## Step 3: Modifying your App
+   ```bash
+   npm start
+   ```
 
-Now that you have successfully run the app, let's modify it.
+5. Run the app on an emulator or physical device:
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+   ```bash
+   npm run android
+   npm run ios
+   ```
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+## Contributing
 
-## Congratulations! :tada:
+Contributions are welcome! Please read the contributing guidelines for more information.
 
-You've successfully run and modified your React Native App. :partying_face:
+## License
 
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+This project is licensed under the MIT License - see the LICENSE file for details.
