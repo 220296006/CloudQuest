@@ -4,6 +4,7 @@
 
 ## Introduction
 Cloud Explorer is a mobile application built using React Native designed to help users learn Google Cloud Platform (GCP) concepts through visually appealing informatics, engaging quizzes, and exams at the end of each certification journey.
+
 ## System Architecture
 
 ### Application Architecture
@@ -13,7 +14,7 @@ Cloud Explorer is a mobile application built using React Native designed to help
 - **Navigation**: React Navigation for handling navigation within the app.
 - **Authentication**: Firebase Authentication for user login and registration.
 
-![Alt](assets/CloudExplocer-AppArchitecture.svg)
+![Alt](assets/CloudExplocer-App-Architecture.svg)
 
 ### Cloud Architecture
 - **Compute**: Google Compute Engine for running backend services.
@@ -22,6 +23,39 @@ Cloud Explorer is a mobile application built using React Native designed to help
 - **Authentication**: Firebase Authentication for secure user authentication.
 - **CI/CD**: Google Cloud Build for continuous integration and deployment.
 - **Hosting**: Google Cloud Run for deploying and managing containerized applications.
+
+![Alt](assets/CloudExplorer-Cloud-Architecture.webp)
+
+The cloud architecture for the Cloud Explorer application offers several advantages:
+
+1. **Scalability**:
+   - **Google Compute Engine** allows the backend services to scale up or down based on demand, ensuring the application can handle varying loads efficiently.
+   - **Google Cloud Run** enables automatic scaling of containerized applications, making it easier to manage resources and costs.
+
+2. **Performance**:
+   - **Google Firestore** provides real-time data synchronization, ensuring that users have access to the most up-to-date information quickly.
+   - **Google Cloud Storage** offers high-performance storage for user data and application assets, ensuring fast access and retrieval times.
+
+3. **Security**:
+   - **Firebase Authentication** provides secure user authentication, protecting user data and ensuring only authorized access to the application.
+   - Google Cloud services come with built-in security features, such as encryption and identity management, to safeguard data and applications.
+
+4. **Reliability**:
+   - Google Cloud Platform (GCP) offers high availability and reliability, ensuring that the application remains accessible and operational even during failures or maintenance.
+   - **Google Cloud Build** ensures a reliable CI/CD pipeline, allowing for continuous integration and deployment with minimal downtime.
+
+5. **Ease of Development and Maintenance**:
+   - Using managed services like **Google Cloud Run** and **Google Firestore** reduces the operational burden on developers, allowing them to focus on building and improving the application rather than managing infrastructure.
+   - **Google Cloud Build** automates the build and deployment process, making it easier to maintain and update the application.
+
+6. **Cost Efficiency**:
+   - Pay-as-you-go pricing models for GCP services help manage costs effectively, ensuring that you only pay for the resources you use.
+   - Automatic scaling features help optimize resource usage, reducing unnecessary expenses.
+
+7. **Integration with AI and Machine Learning**:
+   - The architecture supports integration with AI frameworks and tools like TensorFlow, Hugging Face Transformers, and OpenAI GPT-3, enabling advanced features such as interactive informatics, quizzes, and exams.
+
+Overall, this architecture leverages the strengths of Google Cloud Platform to provide a scalable, secure, and efficient solution for the Cloud Explorer application. If you have any specific questions or need further details, feel free to ask!
 
 ## Functional Requirements
 1. **User Authentication**: Users should be able to register, log in, and log out.
