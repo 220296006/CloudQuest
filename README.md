@@ -13,6 +13,8 @@ Cloud Explorer is a mobile application built using React Native designed to help
 - **Navigation**: React Navigation for handling navigation within the app.
 - **Authentication**: Firebase Authentication for user login and registration.
 
+![Alt](assets/CloudExplocer-AppArchitecture.svg)
+
 ### Cloud Architecture
 - **Compute**: Google Compute Engine for running backend services.
 - **Storage**: Google Cloud Storage for storing user data and application assets.
@@ -88,7 +90,7 @@ steps:
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/cloud-explorer.git
+   git clone https://github.com/220296006/CloudExplorer
    cd cloud-explorer
    ```
 
