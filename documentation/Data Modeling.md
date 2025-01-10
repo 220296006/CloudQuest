@@ -1,5 +1,14 @@
 
-# Great! Let's start by setting up your data models for Firestore and Firebase Authentication in your React Native app using TypeScript. We'll organize the data models in separate folders and files for better structure and maintainability.
+# Data Modeling
+
+/**
+
+* @author Thabiso Matsaba
+* @email <thabisomatsaba96@gmail.com>
+* @create date 10-01-2025 03:03:52
+* @modify date 10-01-2025 03:03:52
+* @desc Data Modeling
+/*
 
 ## Step 1: Set Up Firebase in Your Project
 
@@ -12,9 +21,9 @@ First, make sure you have Firebase set up in your React Native project. If you h
    ```
 
 2. **Configure Firebase**:
-   - Follow the React Native Firebase setup guide to configure Firebase in your project.
-   - Add the `google-services.json` file to your `android/app` directory.
-   - Add the `GoogleService-Info.plist` file to your `ios` directory.
+   * Follow the React Native Firebase setup guide to configure Firebase in your project.
+   * Add the `google-services.json` file to your `android/app` directory.
+   * Add the `GoogleService-Info.plist` file to your `ios` directory.
 
 ### Step 2: Create Data Models
 

@@ -1,27 +1,37 @@
+
 # User Stories
+
+/**
+
+* @author Thabiso Matsaba
+* @email <thabisomatsaba96@gmail.com>
+* @create date 10-01-2025 03:09:08
+* @modify date 10-01-2025 03:09:08
+* @desc User Stories
+ */
 
 ## Step 1: Create User Stories
 
 User stories help you understand the requirements from the user's perspective. Here are some example user stories for your Cloud Explorer app:
 
 1. **User Registration and Login**
-   - As a user, I want to register an account so that I can access the app.
-   - As a user, I want to log in to my account so that I can access my learning progress.
+   * As a user, I want to register an account so that I can access the app.
+   * As a user, I want to log in to my account so that I can access my learning progress.
 
 2. **Learning Modules**
-   - As a user, I want to browse available learning modules so that I can choose what to learn.
-   - As a user, I want to start a learning module so that I can learn about GCP concepts.
+   * As a user, I want to browse available learning modules so that I can choose what to learn.
+   * As a user, I want to start a learning module so that I can learn about GCP concepts.
 
 3. **Quizzes and Exams**
-   - As a user, I want to take quizzes after each module so that I can test my knowledge.
-   - As a user, I want to take an exam at the end of the certification journey so that I can assess my overall understanding.
+   * As a user, I want to take quizzes after each module so that I can test my knowledge.
+   * As a user, I want to take an exam at the end of the certification journey so that I can assess my overall understanding.
 
 4. **Progress Tracking**
-   - As a user, I want to track my progress through the learning modules so that I can see how much I have learned.
-   - As a user, I want to view my quiz and exam results so that I can understand my strengths and weaknesses.
+   * As a user, I want to track my progress through the learning modules so that I can see how much I have learned.
+   * As a user, I want to view my quiz and exam results so that I can understand my strengths and weaknesses.
 
 5. **Notifications**
-   - As a user, I want to receive notifications about my quiz and exam results so that I can stay informed about my progress.
+   * As a user, I want to receive notifications about my quiz and exam results so that I can stay informed about my progress.
 
 ### Step 2: Model Your Data
 
