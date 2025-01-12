@@ -1,14 +1,12 @@
 
 # Data Modeling
 
-/**
-
 * @author Thabiso Matsaba
 * @email <thabisomatsaba96@gmail.com>
 * @create date 10-01-2025 03:03:52
 * @modify date 10-01-2025 03:03:52
 * @desc Data Modeling
-/*
+
 
 ## Step 1: Set Up Firebase in Your Project
 
@@ -50,6 +48,12 @@ export interface User {
   name: string;
   email: string;
   createdAt: Date;
+  profileImage: string; // URL
+    progress: {
+      modulesCompleted: Array<{ moduleId: string; progress: number }>;
+      overallPercentage: number;
+    };
+    notifications: boolean;
 }
 ```
 
@@ -57,42 +61,83 @@ export interface User {
 
 ```typescript
 export interface Module {
-  id: string;
-  title: string;
-  description: string;
-  createdAt: Date;
+  moduleId: string;
+    title: string;
+    description: string;
+    topics: Array<{
+      topicId: string;
+      title: string;
+      content: string; // URL to rich content
+      duration: number; // minutes
+    }>;
 }
 ```
 
 #### Quiz Model (`src/models/Quiz.ts`)
 
 ```typescript
-export interface Question {
-  id: string;
-  question: string;
-  options: string[];
-  correctAnswer: string;
-}
-
 export interface Quiz {
-  id: string;
-  moduleId: string;
-  questions: Question[];
-}
+    quizId: string;
+    moduleId: string;
+    title: string;
+    questions: Array<{
+      questionId: string;
+      text: string;
+      options: string[];
+      correctAnswer: string;
+    }>;
+  }
 ```
 
-#### Progress Model (`src/models/Progress.ts`)
+### Exams ('src/models/Exam.ts')
+
+* **Collection**: `exams`
+* **Interface**:
+
+  ```typescript
+  export interface Exam {
+    examId: string;
+    moduleId: string;
+    title: string;
+    questions: Array<{
+      questionId: string;
+      text: string;
+      options: string[];
+      correctAnswer: string;
+    }>;
+  }
+  ```
+
+### Progress Model (`src/models/Progress.ts`)
 
 ```typescript
 export interface Progress {
   id: string;
   userId: string;
   moduleId: string;
+  topicId: string;
   completed: boolean;
   score: number;
   completedAt: Date;
 }
 ```
+
+### Notifications
+
+Manages system and user-triggered notifications.
+
+* **Collection**: `notifications`
+* **Interface**:
+
+  ```typescript
+  interface Notification {
+    notificationId: string;
+    userId: string;
+    message: string;
+    read: boolean;
+    timestamp: Date;
+  }
+  ```
 
 ### Step 4: Set Up Firebase Services
 
